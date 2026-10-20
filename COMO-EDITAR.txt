@@ -1,0 +1,92 @@
+CÓMO EDITAR LA WEB DE MAIGEL
+============================
+
+ABRIR LA WEB
+  Haz doble clic en index.html: se abre en el navegador.
+  Cada vez que cambies un archivo, guárdalo y pulsa F5 (actualizar) en el navegador.
+
+CON QUÉ EDITAR LOS ARCHIVOS
+  Clic derecho sobre el archivo > Abrir con > Bloc de notas
+  (mejor, Visual Studio Code, que es gratis y colorea el código).
+  Usa Ctrl + F para buscar el texto que quieres cambiar.
+
+
+QUÉ HAY EN CADA ARCHIVO
+  index.html      Home. Es la que ya tenías: su aspecto no ha cambiado.
+  gallery.html    Proyectos: los tres proyectos anteriores + enlace al actual
+  actual.html     Proyecto actual: Relaciones parasociales (concepto, propuesta, desarrollo)
+  about.html      Trayectoria: statement, formación académica, becas y subvenciones
+  archive.html    Exposiciones: individuales y colectivas
+  contact.html    Contacto
+  shop.html       Shop (ahora mismo vacía)
+  js/site.js      Email, Instagram, web y menú. Se cambian UNA vez y se actualizan en toda la web
+  css/styles.css  Aspecto (colores, tamaños). Normalmente no hace falta tocarlo
+  images/         Fotos
+  videos/         Vídeos
+  fonts/          Fuente "US Declaration" (ver el punto 9)
+
+En cada página, los sitios que puedes editar están marcados con "✏️ EDITA" en comentarios
+(las líneas entre <!--  y  -->). Esas líneas no se ven en la web: son notas para ti.
+
+
+TAREAS FRECUENTES
+-----------------
+
+1. CAMBIAR UN TEXTO
+   Busca el texto con Ctrl + F, cámbialo y guarda. Cuida de no borrar las etiquetas
+   que lo rodean (lo que va entre < y >).
+
+2. CAMBIAR EMAIL, INSTAGRAM O WEB
+   Abre js/site.js. Arriba del todo, bajo "EDITA AQUÍ", cambia los valores entre comillas.
+   Se actualizan solos en el pie de página y en la página de contacto.
+
+3. SUSTITUIR UNA IMAGEN POR OTRA
+   Opción fácil: guarda la nueva foto en images/ con EL MISMO NOMBRE que la antigua
+   (por ejemplo, hero.jpg) y sobrescribe. No hay que tocar ningún código.
+
+4. PONER UNA IMAGEN EN UN CUADRO GRIS ("Boceto por añadir")
+   En actual.html, dentro del bloque del boceto, sustituye
+       <div class="placeholder vertical">Boceto por añadir</div>
+   por
+       <img src="images/boceto-1.jpg" alt="Descripción breve del boceto">
+   y guarda la foto en images/ con ese nombre.
+
+5. AÑADIR UN PROYECTO ANTERIOR
+   En gallery.html, copia un bloque completo (desde "INICIO PROYECTO" hasta "FIN PROYECTO"),
+   pégalo debajo del último y cambia la imagen, el título y los textos.
+   Si cambias el id="..." del bloque, que sea una sola palabra, sin tildes ni espacios.
+
+6. AÑADIR UNA EXPOSICIÓN, BECA O FORMACIÓN
+   Copia un bloque <div class="entry"> ... </div> completo, pégalo debajo y cambia
+   el año, el título y el lugar. Para quitar los marcadores en gris, borra class="entry todo"
+   y deja class="entry".
+
+7. AÑADIR UN VÍDEO
+   Guarda el vídeo en videos/ (mejor .mp4 y de menos de 50 MB) y, en el proyecto que quieras,
+   sustituye la <img ...> por:
+       <video controls preload="metadata" src="videos/nombre-del-video.mp4"></video>
+
+8. TEXTOS ENTRE [CORCHETES] Y EN GRIS
+   Son marcadores de lo que falta por rellenar. Sustitúyelos por el texto real, quita
+   class="todo" de esa etiqueta para que pase a negro, o borra el bloque si no lo necesitas.
+
+9. FUENTE "US DECLARATION"
+   El logo y los títulos usan esa fuente, que solo se ve en los ordenadores donde está instalada.
+   En cualquier otro dispositivo se ve una letra cursiva parecida (Pinyon Script).
+   Para que se vea igual en todas partes: copia el archivo de la fuente a fonts/ y sigue
+   las instrucciones que hay al principio de css/styles.css (revisa antes que su licencia
+   permita usarla en una web).
+
+10. CONSEJOS PARA LAS IMÁGENES
+    - Formato .jpg y de menos de 1 MB cada una, para que la web cargue rápido.
+    - Nombres sin espacios, tildes ni mayúsculas: obra-5.jpg, boceto-2.jpg.
+    - La carpeta se llama images (en minúscula). No la renombres.
+
+11. PONER LA WEB EN INTERNET (cuando quieras)
+    Hay servicios gratuitos, como Netlify Drop o GitHub Pages: se sube la carpeta completa
+    de la web tal cual y te dan un enlace.
+
+
+¿NO QUIERES TOCAR CÓDIGO?
+  Dime en el chat qué quieres cambiar (un texto, una foto, una sección nueva) y te devuelvo
+  los archivos actualizados.

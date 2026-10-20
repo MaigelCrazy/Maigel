@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Space+Grotesk:wght@700&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <title>MAIGEL — Artista visual</title>
+</head>
+
+<body data-page="index">
+
+  <!-- Menú y pie de página: se generan desde js/site.js -->
+  <header class="nav" id="site-nav"></header>
+
+  <main>
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-left">
+          <h1 class="hero-title">Maigel</h1>
+          <p class="hero-subtitle">Artista visual · Madrid</p>
+        </div>
+
+        <div class="hero-image-wrapper">
+          <div class="hero-image">
+            <!-- ✏️ Para cambiar la imagen principal, sustituye images/hero.jpg por otra con el mismo nombre -->
+            <img src="images/hero.jpg" alt="Obra principal de Maigel">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero-scroll">↓</div>
+
+      <a href="gallery.html" class="hero-link">
+        Ver obras recientes →
+      </a>
+    </section>
+
+    <!-- =========================================
+         STATEMENT
+    ========================================== -->
+    <section class="statement">
+      <div class="container">
+
+        <h2 class="statement-title">
+          Imágenes que no se pueden hacer rápido.
+        </h2>
+
+        <p class="statement-text">
+          Obra procesual entre lo íntimo y lo violento.
+          Para quien busca piezas con recorrido dentro de una colección.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- =========================================
+         OBRAS RECIENTES
+    ========================================== -->
+    <section class="recent-works">
+      <div class="container">
+
+        <h3 class="section-label">OBRAS RECIENTES</h3>
+
+        <div class="works-grid">
+
+          <!-- OBRA 1 -->
+          <a href="gallery.html#cianotipo" class="work-item">
+            <div class="work-image">
+              <img src="images/obra-4.jpg" alt="Cianotipo sobre papel">
+            </div>
+            <div class="work-overlay">
+              <p class="work-title">
+                Cianotipo · <i>Looking inside</i>
+              </p>
+            </div>
+          </a>
+
+          <!-- OBRA 2 -->
+          <a href="gallery.html#mezzotinta" class="work-item">
+            <div class="work-image">
+              <img src="images/obra-2.jpg" alt="Grabado en cobre">
+            </div>
+            <div class="work-overlay">
+              <p class="work-title">
+                Fotografía estenopeica · <i>Sin título</i>
+              </p>
+            </div>
+          </a>
+
+          <!-- OBRA 3 -->
+          <a href="gallery.html" class="work-item">
+            <div class="work-image">
+              <img src="images/obra-3.jpg" alt="Fotografía estenopeica">
+            </div>
+            <div class="work-overlay">
+              <p class="work-title">
+                Xilografía · <i>Sin título</i>
+              </p>
+            </div>
+          </a>
+
+          <!-- OBRA 4 -->
+          <a href="gallery.html#pintura-politica" class="work-item">
+            <div class="work-image">
+              <img src="images/obra-1.jpg" alt="Pintura sobre plato">
+            </div>
+            <div class="work-overlay">
+              <p class="work-title">
+                Pintura · <i>Paisajes contemporáneos</i>
+              </p>
+            </div>
+          </a>
+
+        </div>
+
+        <a href="gallery.html" class="gallery-link">
+          Ver galería completa →
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" id="site-footer"></footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+/* =========================================================
+   MAIGEL — estilos de toda la web
+   Parte 1: tus estilos originales (Home). NO TOCAR si quieres que la Home siga igual.
+   Parte 2: estilos de las páginas nuevas (al final del archivo).
+   Paleta: blanco #FFFFFF · negro #0D0D0D · gris claro #E8E8E8 · gris texto #6B6B6B
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   FUENTE PERSONALIZADA
+   "US Declaration" solo se ve en los ordenadores donde está instalada.
+   Para que se vea en cualquier dispositivo: copia el archivo de la fuente
+   (.woff2, .ttf u .otf) a la carpeta fonts/, ajusta el nombre del archivo
+   y borra las dos líneas marcadas como INICIO y FIN del bloque de abajo.
+--------------------------------------------------------- */
+
+@font-face {
+  font-family: 'US Declaration';
+  src: url('../fonts/zai_USDeclaration.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* =========================================
+   RESET
+========================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: #FFFFFF;
+  color: #0D0D0D;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* =========================================
+   GLOBAL
+========================================== */
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+section { padding-top: 120px; padding-bottom: 120px; }
+
+/* =========================================
+   NAVIGATION
+========================================== */
+.nav {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  background: #FFFFFF;
+  z-index: 1000;
+  border-bottom: 1px solid #E8E8E8;
+}
+.nav-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; }
+.logo {
+  font-family: 'US Declaration', 'Pinyon Script', cursive;
+  font-size: 22px;
+  font-weight: normal;
+  letter-spacing: 0px;
+  text-transform: none;
+}
+.menu { display: flex; gap: 28px; list-style: none; }
+.menu a { font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+
+/* =========================================
+   HERO
+========================================== */
+.hero { height: 100vh; padding-top: 72px; position: relative; }
+.hero-grid { display: grid; grid-template-columns: 40% 60%; height: calc(100vh - 72px); }
+.hero-left { display: flex; flex-direction: column; justify-content: center; padding-right: 60px; }
+.hero-title {
+  font-family: 'US Declaration', 'Pinyon Script', cursive;
+  font-size: clamp(72px, 8vw, 128px);
+  line-height: 0.9;
+  letter-spacing: 0px;
+  font-weight: normal;
+  text-transform: none;
+}
+.hero-subtitle { margin-top: 24px; font-size: 14px; letter-spacing: 0.5px; }
+.hero-image { width: 100%; height: 100%; background: #CCCCCC; aspect-ratio: 3 / 2; }
+.hero-scroll { position: absolute; left: 40px; bottom: 32px; font-size: 28px; }
+.hero-link { position: absolute; right: 40px; bottom: 36px; font-size: 14px; }
+
+/* =========================================
+   STATEMENT
+========================================== */
+.statement { text-align: center; }
+.statement-title { max-width: 900px; margin: 0 auto; font-size: clamp(28px, 3vw, 32px); line-height: 1.3; }
+.statement-text { max-width: 620px; margin: 32px auto 0; font-size: 15px; color: #0D0D0D; }
+
+/* =========================================
+   RECENT WORKS
+========================================== */
+.section-label { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 40px; }
+.works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px; }
+.work-item { position: relative; display: block; aspect-ratio: 1 / 1; overflow: hidden; }
+.work-image { width: 100%; height: 100%; overflow: hidden; }
+.work-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.work-overlay {
+  position: absolute; inset: 0;
+  background: rgba(13, 13, 13, 0.55);
+  color: #FFFFFF;
+  display: flex; align-items: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.work-item:hover .work-overlay { opacity: 1; }
+.work-title { font-size: 14px; line-height: 1.4; }
+.gallery-link { display: block; text-align: center; margin-top: 48px; font-size: 14px; }
+
+/* =========================================
+   FOOTER
+========================================== */
+.footer { background: #0D0D0D; color: #FFFFFF; padding-top: 32px; padding-bottom: 32px; }
+.footer-inner {
+  display: flex; justify-content: center; align-items: center;
+  gap: 20px; flex-wrap: wrap; font-size: 13px;
+}
+
+/* =========================================
+   RESPONSIVE (Home)
+========================================== */
+@media (max-width: 900px) {
+  .container { padding-left: 20px; padding-right: 20px; }
+  section { padding-top: 80px; padding-bottom: 80px; }
+  .nav-inner { height: 64px; }
+  .menu { gap: 14px; overflow-x: auto; }
+  .menu a { font-size: 11px; white-space: nowrap; }
+  .hero { height: auto; min-height: 100vh; padding-top: 64px; }
+  .hero-grid { display: flex; flex-direction: column; height: auto; }
+  .hero-image-wrapper { order: -1; }
+  .hero-image { height: 80vw; }
+  .hero-left { padding-right: 0; padding-top: 48px; padding-bottom: 120px; }
+  .hero-title { font-size: clamp(72px, 18vw, 120px); letter-spacing: -2px; }
+  .hero-scroll { left: 20px; bottom: 24px; }
+  .hero-link { right: 20px; bottom: 28px; font-size: 13px; }
+  .statement-title { font-size: 28px; }
+  .works-grid { gap: 0; }
+  .footer-inner { flex-direction: column; gap: 8px; text-align: center; }
+}
+
+
+/* =========================================================
+   PARTE 2 — PÁGINAS NUEVAS (Trayectoria, Exposiciones, Proyectos…)
+   Misma estética: blanco, negro y gris. Sin sombras, sin color, sin bordes redondeados.
+========================================================= */
+
+/* Página actual marcada en el menú */
+.menu a[aria-current="page"] { text-decoration: underline; text-underline-offset: 6px; }
+
+/* Cabecera de página interior */
+.inner { padding-top: 72px; min-height: calc(100vh - 85px); }
+.inner section { padding-top: 80px; padding-bottom: 80px; }
+.inner section + section { border-top: 1px solid #E8E8E8; }
+.inner .page-head { padding-top: 96px; padding-bottom: 72px; }
+.page-title {
+  font-family: 'US Declaration', 'Pinyon Script', cursive;
+  font-weight: normal;
+  font-size: clamp(40px, 4.5vw, 64px);
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+.page-intro { max-width: 620px; margin-top: 28px; font-size: 15px; }
+
+/* Enlaces de sección bajo el título (Anteriores · Actual) */
+.subnav { display: flex; gap: 28px; margin-top: 60px; list-style: none; }
+.subnav a { font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+.subnav a:hover { text-decoration: underline; text-underline-offset: 6px; }
+
+/* Etiqueta a la izquierda, contenido a la derecha */
+.split { display: grid; grid-template-columns: minmax(160px, 25%) 1fr; gap: 40px; }
+.inner .section-label { margin-bottom: 0; padding-top: 4px; }
+
+/* Textos */
+.lead { font-size: clamp(22px, 2.2vw, 28px); line-height: 1.35; max-width: 760px; margin-bottom: 28px; }
+.body-text { font-size: 15px; line-height: 1.55; max-width: 620px; }
+.body-text + .body-text { margin-top: 16px; }
+.text-link { display: inline-block; margin-top: 40px; font-size: 14px; }
+.text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Texto pendiente de rellenar: gris, entre corchetes */
+.todo { color: #6B6B6B; }
+
+/* Filas con fecha (formación, becas, exposiciones) */
+.entry {
+  display: grid; grid-template-columns: 120px 1fr; gap: 24px;
+  padding: 20px 0; border-top: 1px solid #E8E8E8; font-size: 15px;
+}
+.entry:last-child { border-bottom: 1px solid #E8E8E8; }
+.entry-date { font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: #6B6B6B; padding-top: 2px; }
+.entry-title { font-size: 15px; }
+.entry-meta { font-size: 14px; color: #6B6B6B; margin-top: 4px; }
+.entry.todo .entry-title { color: #6B6B6B; }
+.block + .block { margin-top: 56px; }
+.block-title { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; }
+
+/* Proyectos anteriores */
+.project { display: grid; grid-template-columns: 3fr 2fr; gap: 40px; align-items: start; }
+.project + .project { margin-top: 96px; }
+.project-media { background: #CCCCCC; }
+.project-media img, .project-media video { width: 100%; height: auto; object-fit: contain; display: block; }
+.project-title { font-size: 20px; font-weight: 400; line-height: 1.3; }
+.project-meta { font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: #6B6B6B; margin: 8px 0 24px; }
+
+/* Marcador de imagen pendiente: gris #CCCCCC */
+.placeholder {
+  background: #CCCCCC; color: #4A4A4A;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  font-size: 13px; letter-spacing: 1px; text-transform: uppercase;
+  aspect-ratio: 3 / 2; padding: 16px;
+}
+.placeholder.vertical { aspect-ratio: 2 / 3; }
+
+/* Bocetos del proyecto actual */
+.sketches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.sketch-title { font-size: 15px; margin-top: 16px; }
+.sketch .body-text { margin-top: 8px; font-size: 14px; }
+
+/* Contacto */
+.contact-row { padding: 20px 0; border-top: 1px solid #E8E8E8; font-size: 15px; display: grid; grid-template-columns: 120px 1fr; gap: 24px; }
+.contact-row:last-child { border-bottom: 1px solid #E8E8E8; }
+.contact-row a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+@media (max-width: 900px) {
+  .inner { padding-top: 64px; }
+  .inner section { padding-top: 56px; padding-bottom: 56px; }
+  .inner .page-head { padding-top: 56px; padding-bottom: 32px; }
+  .split { grid-template-columns: 1fr; gap: 24px; }
+  .entry, .contact-row { grid-template-columns: 90px 1fr; gap: 16px; }
+  .project { grid-template-columns: 1fr; gap: 24px; }
+  .project + .project { margin-top: 64px; }
+  .sketches { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* Móvil: separa el logo del menú para que no se toquen */
+@media (max-width: 900px) {
+  .nav-inner { gap: 16px; }
+  .logo { flex-shrink: 0; }
+  .nav-inner nav { min-width: 0; }
+}
+
+
+/* =========================================================
+   AJUSTES POSTERIORES
+   Hero: la imagen empieza donde empezaba, pero llega hasta el borde derecho de la pantalla.
+   (En pantallas de más de 1600 px también cruza el margen lateral hasta el borde.)
+========================================================= */
+.hero { overflow-x: clip; }
+.hero-image-wrapper { margin-right: calc(-1 * (40px + max(0px, (100vw - 1600px) / 2))); }
+
+@media (max-width: 900px) {
+  .hero-image-wrapper { margin-right: 0; }   /* en móvil la imagen se queda como estaba */
+}
+
+/* Cabecera con enlaces bajo el título (Proyectos): menos distancia hasta la línea divisoria inferior */
+@media (min-width: 901px) {
+  .inner .page-head:has(.subnav) { padding-bottom: 56px; }
+}
+
+/* Hero: "Maigel" y "Artista visual · Madrid" empiezan en el mismo punto, a la izquierda
+   (el mismo margen que el logo del menú). Es el comportamiento original.
+   Para desplazar los dos textos a la vez, activa la línea de abajo borrando
+   el símbolo de apertura y el de cierre del comentario, y cambia el valor
+   (negativo = más a la izquierda, positivo = más a la derecha). */
+.hero-left { margin-left: -60px; }
